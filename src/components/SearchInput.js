@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ searchCity }) => {
+const SearchInput = ({ onSearchCity }) => {
   const [city, setCity] = useState();
 
   function handleKeyDown({ keyCode }) {
     if (keyCode === 13) {
-      searchCity(city);
+      onSearchCity(city);
     }
   }
 
   function handleInput({ target: { value } }) {
-    console.log({ value });
     setCity(value);
   }
 
@@ -24,3 +24,9 @@ export default ({ searchCity }) => {
     />
   );
 };
+
+SearchInput.propTypes = {
+  onSearchCity: PropTypes.func.isRequired,
+};
+
+export default SearchInput;

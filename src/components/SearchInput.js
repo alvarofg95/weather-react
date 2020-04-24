@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 const SearchInput = ({ onSearchCity }) => {
   const [city, setCity] = useState();
+  const [searched, setSearched] = useState();
 
   function handleKeyDown({ keyCode }) {
     if (keyCode === 13) {
       onSearchCity(city);
+      setSearched(true);
+      
     }
   }
 
@@ -17,6 +20,7 @@ const SearchInput = ({ onSearchCity }) => {
   return (
     <input
       type="text"
+      className={searched === true ? 'search' : ''}
       placeholder="Introduce una ciudad"
       value={city}
       onChange={handleInput}

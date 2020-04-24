@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchInput from 'components/SearchInput';
 import { getFetchURLs, getWeatherInfo } from 'config/utils';
-import 'App.css';
+import 'style/App.scss';
 import Result from 'components/Result';
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className="container">
       <SearchInput onSearchCity={handleSearch} />
-      {weatherInfo ? <Result /> : null}
+      {weatherInfo ? <Result data={weatherInfo} /> : null}
     </div>
   );
 };

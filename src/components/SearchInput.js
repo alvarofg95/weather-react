@@ -9,7 +9,6 @@ const SearchInput = ({ onSearchCity }) => {
     if (keyCode === 13) {
       onSearchCity(city);
       setSearched(true);
-      
     }
   }
 
@@ -18,14 +17,16 @@ const SearchInput = ({ onSearchCity }) => {
   }
 
   return (
-    <input
-      type="text"
-      className={searched === true ? 'search' : ''}
-      placeholder="Introduce una ciudad"
-      value={city}
-      onChange={handleInput}
-      onKeyDown={handleKeyDown}
-    />
+    <label>
+      <input
+        type="text"
+        className={searched === true ? 'search' : ''}
+        placeholder="Introduce una ciudad"
+        value={city}
+        onChange={handleInput}
+        onKeyDown={handleKeyDown}
+      />
+    </label>
   );
 };
 

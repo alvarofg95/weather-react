@@ -16,7 +16,7 @@ export const getWeatherInfo = (weather, forecast) => {
     MONTHS[currentDate.getMonth()]
   }`;
   const sunset = new Date(weather.sys.sunset * 1000).toLocaleTimeString().slice(0, 5);
-  const sunrise = new Date(weather.sys.sunrise * 1000).toLocaleTimeString().slice(0, 5);
+  const sunrise = new Date(weather.sys.sunrise * 1000).toLocaleTimeString().slice(0, 4);
   const weatherInfo = {
     city: weather.name,
     country: weather.sys.country,
@@ -31,7 +31,13 @@ export const getWeatherInfo = (weather, forecast) => {
     clouds: weather.clouds.all,
     humidity: weather.main.humidity,
     wind: weather.wind.speed,
-    forecast: forecast.list,
+    forecast: forecast.list.map((item) => ({
+      temp: Math.floor(item.main.temp * 1) / 1,
+      icon: item.weather[0].icon,
+      month: item.dt_txt.slice(5, 7),
+      day: item.dt_txt.slice(8, 10),
+      hour: item.dt_txt.slice(11, 13) * 1,
+    })),
   };
   return weatherInfo;
 };

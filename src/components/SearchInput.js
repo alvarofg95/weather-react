@@ -8,7 +8,7 @@ const SearchInput = ({ onSearchCity }) => {
   function handleKeyDown({ keyCode }) {
     if (keyCode === 13) {
       onSearchCity(city);
-      setSearched(true);
+      setSearched(city ? true : false);
     }
   }
 

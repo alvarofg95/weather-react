@@ -23,21 +23,15 @@ label {
 }
 
 label:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 15px;
   top: 0;
   bottom: 0;
   width: 20px;
-  background: url("../assets/icons/buscar.svg") center / contain no-repeat;
+  background: url('../assets/icons/buscar.svg') center / contain no-repeat;
+}
 
-  svg {
-    fill: #ffffff;
-  }
-}
-input {
-  padding: 10px 30px;
-}
 input {
   width: 33rem;
   padding: 1rem 1.5rem 1rem 40px;
@@ -48,12 +42,12 @@ input {
   outline: none;
   background-color: #4b7f73b3;
   color: #ffffff;
+  text-transform: capitalize;
   &.search {
     margin-top: 8rem;
   }
   @media (max-width: 900px) {
     width: 80%;
-    text-align: center;
   }
 }
 input::placeholder {
@@ -152,7 +146,7 @@ input::placeholder {
     overflow-y: hidden;
     margin-top: 20px;
     padding-bottom: 20px;
-    
+
     span {
       font-size: 20px;
       &.bold {
@@ -166,6 +160,9 @@ input::placeholder {
       padding: 15px;
       margin-right: 1rem;
       min-width: 6rem;
+      @media (max-width: 900px) {
+        min-width: 4.5rem;
+      }
     }
   }
 
@@ -195,5 +192,19 @@ input::placeholder {
   .smallIcon {
     width: 50px;
     height: 50px;
+  }
+}
+
+.error {
+  @media (max-width: 900px) {
+    width: 75%;
+    margin: 5rem auto;
+    font-size: 25px;
+  }
+  //width: 20rem;
+  margin: 5rem auto;
+  font-size: 50px;
+  .icon {
+    width: 20rem;
   }
 }

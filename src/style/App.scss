@@ -15,9 +15,9 @@ body,
   @media (max-width: 600px) {
     background-image: url('../assets/background-mobile.jpg');
     background-repeat: round;
-    &.hasResult {
-      height: auto;
-    }
+  }
+  &.hasResult {
+    height: auto;
   }
 }
 

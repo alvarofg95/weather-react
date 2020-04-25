@@ -33,7 +33,7 @@ const App = () => {
     }
   }
   return (
-    <div className="container">
+    <div className={`container${weatherInfo ? ' hasResult' : ''}`}>
       <SearchInput onSearchCity={handleSearch} />
       {weatherInfo ? <Result data={weatherInfo} /> : null}
       {error ? <ErrorMessage message={error} /> : null}

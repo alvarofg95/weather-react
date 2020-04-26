@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const SearchInput = ({ onSearchCity }) => {
-  const [city, setCity] = useState();
-  const [searched, setSearched] = useState();
+  const [city, setCity] = useState('');
+  const [searched, setSearched] = useState(false);
 
   function handleKeyDown({ keyCode }) {
     if (keyCode === 13) {
